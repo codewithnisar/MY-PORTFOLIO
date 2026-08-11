@@ -14,7 +14,10 @@ function project(title, description) {
 
   if (titleEl) titleEl.textContent = title;
   if (descEl) descEl.textContent = description;
-  if (modalEl) modalEl.classList.add('open');
+  if (modalEl) {
+    modalEl.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
 }
 
 /**
@@ -22,7 +25,10 @@ function project(title, description) {
  */
 function closeModal() {
   const modalEl = document.getElementById('modal');
-  if (modalEl) modalEl.classList.remove('open');
+  if (modalEl) {
+    modalEl.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 }
 
 // Event Listeners for Modal Backdrop, Keyboard Esc key, and Card Keyboard Triggers

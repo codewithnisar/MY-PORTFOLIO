@@ -1109,52 +1109,84 @@ footer {
 }
 
 /* ==========================================
-   Modal Dialog
+   Modal Dialog (Responsive Popup)
    ========================================== */
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.73);
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(8px);
   display: none;
   place-items: center;
-  z-index: 500;
-  padding: 20px;
+  z-index: 1000;
+  padding: 15px;
+  overflow-y: auto;
 }
 
 .modal.open {
   display: grid;
+  animation: modalFadeIn 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .modal-card {
   background: var(--paper);
   color: var(--ink);
-  width: min(700px, 100%);
-  padding: 35px;
+  width: min(580px, 92vw);
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 32px 28px;
   position: relative;
   border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  border-radius: 8px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
 }
 
 .modal-card h2 {
-  font: 800 48px Syne, sans-serif;
-  line-height: 1;
-  margin: 15px 0;
+  font: 800 clamp(20px, 4.5vw, 32px)/1.18 Syne, sans-serif;
+  margin: 12px 0 16px;
+  color: var(--ink);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  padding-right: 35px;
 }
 
 .modal-card p {
   color: var(--muted);
-  line-height: 1.8;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .close {
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 16px;
+  top: 16px;
   border: 1px solid var(--line);
-  background: none;
+  background: var(--bg);
   color: var(--ink);
-  width: 35px;
-  height: 35px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
   cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 5;
+}
+
+.close:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  transform: scale(1.08);
 }
 
 /* ==========================================
@@ -1555,6 +1587,47 @@ footer {
     right: 15px;
     bottom: 15px;
     text-align: center;
+  }
+
+  .modal {
+    padding: 10px;
+  }
+
+  .modal-card {
+    padding: 22px 16px;
+    width: min(95vw, 380px);
+    max-height: 82vh;
+    border-radius: 6px;
+  }
+
+  .modal-card h2 {
+    font-size: clamp(17px, 5.5vw, 22px);
+    margin: 8px 0 12px;
+    padding-right: 30px;
+    line-height: 1.25;
+  }
+
+  .modal-card p {
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  .close {
+    right: 12px;
+    top: 12px;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
+
+  .modal-card .tags {
+    margin-top: 18px;
+    gap: 5px;
+  }
+
+  .modal-card .tag {
+    font-size: 10px;
+    padding: 4px 8px;
   }
 }
 
