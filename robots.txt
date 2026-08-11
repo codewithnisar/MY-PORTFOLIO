@@ -1,0 +1,6 @@
+# Robots.txt for Nisar Ali — Digital Craft Portfolio
+User-agent: *
+Allow: /
+
+# Google & Search Engine Sitemap Location
+Sitemap: https://codewithnisar.com/sitemap.xml
