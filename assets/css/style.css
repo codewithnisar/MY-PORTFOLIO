@@ -37,6 +37,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden !important;
+  max-width: 100vw;
 }
 
 body {
@@ -44,7 +46,13 @@ body {
   background: var(--bg);
   color: var(--ink);
   transition: background 0.3s, color 0.3s;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  max-width: 100vw;
+}
+
+img, svg, video, iframe {
+  max-width: 100%;
+  height: auto;
 }
 
 ::selection {
@@ -73,14 +81,22 @@ select {
    Header & Navigation
    ========================================== */
 header {
-  padding: 22px 0;
+  padding: 16px 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
-  background: linear-gradient(var(--bg), transparent);
-  pointer-events: none;
+  z-index: 500;
+  background: rgba(238, 234, 226, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(207, 202, 192, 0.4);
+  transition: background 0.3s, padding 0.3s, border-color 0.3s;
+}
+
+.dark header {
+  background: rgba(16, 16, 16, 0.88);
+  border-bottom: 1px solid rgba(48, 48, 48, 0.4);
 }
 
 .nav {
@@ -1254,22 +1270,24 @@ footer {
 .mobile-nav {
   pointer-events: auto;
   position: fixed;
-  top: 80px;
-  left: 15px;
-  right: 15px;
+  top: 75px;
+  left: 12px;
+  right: 12px;
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 24px 20px;
+  padding: 20px 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-20px) scale(0.96);
+  transform: translateY(-15px) scale(0.97);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 200;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  z-index: 600;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
 .mobile-nav.active {
@@ -1315,45 +1333,53 @@ footer {
 /* ==========================================
    Comprehensive Responsive Breakpoints
    ========================================== */
+/* ==========================================
+   Comprehensive Responsive Breakpoints (Master)
+   ========================================== */
 @media (max-width: 992px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 35px;
   }
 
   .hero {
     min-height: auto;
-    padding-top: 130px;
-    padding-bottom: 40px;
+    padding-top: 120px;
+    padding-bottom: 30px;
   }
 
   .hero-art {
-    height: 440px;
-    margin-top: 20px;
+    height: 400px;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
   }
 
   .shape.one,
   .shape.two,
   .art-content {
-    width: min(310px, 85vw);
-    height: 400px;
+    width: min(290px, 84vw);
+    height: 360px;
+    left: 50%;
+    right: auto;
   }
 
   .shape.one {
-    right: calc(50% - 170px);
-    top: 25px;
+    transform: translateX(-50%) rotate(-6deg);
+    top: 20px;
   }
 
   .shape.two {
-    right: calc(50% - 150px);
-    top: 12px;
+    transform: translateX(-50%) rotate(4deg);
+    top: 10px;
   }
 
   .art-content {
-    right: calc(50% - 130px);
+    transform: translateX(-50%) rotate(-1deg);
     top: 0;
   }
 }
@@ -1376,15 +1402,15 @@ footer {
 
   .work-grid {
     grid-template-columns: 1fr;
-    gap: 40px 15px;
+    gap: 35px;
   }
 
   .work:nth-child(even) {
-    margin-top: 0;
+    margin-top: 0 !important;
   }
 
   .service {
-    grid-template-columns: 55px 1fr 60px;
+    grid-template-columns: 50px 1fr 40px;
   }
 
   .service p {
@@ -1396,8 +1422,12 @@ footer {
   }
 
   .creator {
-    padding: 45px 30px;
-    gap: 35px;
+    padding: 40px 24px;
+    gap: 30px;
+  }
+
+  .creator:after {
+    display: none !important;
   }
 
   .videos {
@@ -1406,69 +1436,91 @@ footer {
 }
 
 @media (max-width: 600px) {
+  header {
+    padding: 12px 0;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .circle-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .mobile-nav {
+    top: 62px;
+  }
+
   .container {
     width: calc(100% - 24px);
   }
 
   section {
-    padding: 70px 0;
+    padding: 55px 0;
   }
 
   .hero {
-    padding-top: 110px;
+    padding-top: 100px;
   }
 
   .hero h1 {
-    font-size: clamp(38px, 10vw, 55px);
-    margin: 18px 0 25px;
-    line-height: 0.92;
+    font-size: clamp(32px, 8.5vw, 48px);
+    margin: 15px 0 20px;
+    line-height: 0.95;
+    word-break: break-word;
   }
 
   .hero-copy {
-    font-size: 14px;
-    line-height: 1.7;
+    font-size: 13.5px;
+    line-height: 1.65;
   }
 
   .actions {
     flex-direction: column;
+    width: 100%;
     gap: 10px;
   }
 
   .btn {
     width: 100%;
     justify-content: center;
-    padding: 14px 16px;
+    padding: 13px 16px;
   }
 
   .hero-art {
-    height: 380px;
+    height: 350px;
   }
 
   .shape.one,
   .shape.two,
   .art-content {
-    width: min(270px, 82vw);
-    height: 340px;
+    width: min(260px, 80vw);
+    height: 320px;
+    left: 50%;
+    right: auto;
   }
 
   .shape.one {
-    right: calc(50% - 145px);
-    top: 20px;
+    transform: translateX(-50%) rotate(-4deg);
+    top: 15px;
   }
 
   .shape.two {
-    right: calc(50% - 130px);
-    top: 10px;
+    transform: translateX(-50%) rotate(3deg);
+    top: 8px;
   }
 
   .art-content {
-    right: calc(50% - 115px);
+    transform: translateX(-50%) rotate(0deg);
     top: 0;
-    padding: 22px 18px;
+    padding: 18px 15px;
   }
 
   .art-name {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .art-top {
@@ -1484,50 +1536,55 @@ footer {
   }
 
   .title {
-    font-size: clamp(32px, 8vw, 48px);
+    font-size: clamp(28px, 7.5vw, 42px);
   }
 
   .big-copy {
-    font-size: 22px;
+    font-size: 20px;
+    line-height: 1.5;
   }
 
   .about-right {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
   }
 
   .skill-card {
-    padding: 24px 20px;
+    padding: 22px 18px;
+  }
+
+  .skill-card h3 {
+    font-size: 20px;
   }
 
   .work-img {
-    height: 290px;
+    height: clamp(220px, 55vw, 280px);
   }
 
   .ui {
-    inset: 15px;
-    padding: 15px;
+    inset: 12px;
+    padding: 12px;
   }
 
   .ui-block {
-    height: 60px;
+    height: 55px;
   }
 
   .ui-small {
-    height: 80px;
+    height: 70px;
   }
 
   .work-info h3 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .service {
-    grid-template-columns: 40px 1fr 30px;
-    padding: 20px 0;
+    grid-template-columns: 35px 1fr 25px;
+    padding: 18px 0;
   }
 
   .service h3 {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .process {
@@ -1535,26 +1592,36 @@ footer {
   }
 
   .step {
-    min-height: 130px;
-    padding: 15px;
+    min-height: 120px;
+    padding: 14px;
   }
 
   .step h3 {
-    margin-top: 30px;
-    font-size: 18px;
+    margin-top: 25px;
+    font-size: 17px;
+  }
+
+  .jitem {
+    grid-template-columns: 50px 1fr;
+    gap: 12px;
+  }
+
+  .jitem h3 {
+    font-size: 20px;
   }
 
   .creator {
-    padding: 30px 20px;
+    padding: 28px 18px;
+    border-radius: 6px;
   }
 
   .creator h2 {
-    font-size: 38px;
+    font-size: clamp(32px, 8vw, 44px);
   }
 
   .creator-stats {
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 12px;
   }
 
   .videos {
@@ -1564,16 +1631,16 @@ footer {
   .field input,
   .field textarea,
   .field select {
-    font-size: 16px; /* Prevents auto-zoom on iOS */
+    font-size: 16px !important; /* Prevents auto-zoom on iOS */
     padding: 12px;
   }
 
   .contact-box {
-    gap: 30px;
+    gap: 25px;
   }
 
   .contact-box h2 {
-    font-size: 38px;
+    font-size: clamp(32px, 8vw, 44px);
   }
 
   .foot {
@@ -1595,7 +1662,7 @@ footer {
 
   .modal-card {
     padding: 22px 16px;
-    width: min(95vw, 380px);
+    width: min(94vw, 380px);
     max-height: 82vh;
     border-radius: 6px;
   }
@@ -1631,24 +1698,47 @@ footer {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
+  .process {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 380px) {
   .hero h1 {
-    font-size: 34px;
+    font-size: 30px;
   }
 
   .shape.one,
   .shape.two,
   .art-content {
-    width: 240px;
-    height: 310px;
+    width: 225px;
+    height: 285px;
+    left: 50%;
+    right: auto;
+  }
+
+  .shape.one {
+    transform: translateX(-50%) rotate(-3deg);
+    top: 10px;
+  }
+
+  .shape.two {
+    transform: translateX(-50%) rotate(2deg);
+    top: 5px;
+  }
+
+  .art-content {
+    transform: translateX(-50%) rotate(0deg);
+    top: 0;
   }
 
   .art-name {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   .work-img {
-    height: 250px;
+    height: 210px;
   }
 }
 
