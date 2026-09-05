@@ -65,10 +65,12 @@
     <div class="container nav">
       <a href="#home" class="logo" aria-label="Nisar Ali — Home">NISAR<i>.</i></a>
       <nav class="nav-center" aria-label="Main Navigation">
-        <a href="#about" data-section="about">About</a>
         <a href="#work" data-section="work">Work</a>
         <a href="#services" data-section="services">Services</a>
+        <a href="#about" data-section="about">About</a>
         <a href="#stack" data-section="stack">Stack</a>
+        <a href="#process" data-section="process">Process</a>
+        <a href="#pricing" data-section="pricing">Pricing</a>
         <a href="#contact" data-section="contact">Contact</a>
       </nav>
       <div class="nav-right">
@@ -86,10 +88,12 @@
 
     <!-- Mobile Nav Drawer -->
     <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile Navigation">
-      <a href="#about" class="mobile-link">About</a>
       <a href="#work" class="mobile-link">Work</a>
       <a href="#services" class="mobile-link">Services</a>
+      <a href="#about" class="mobile-link">About</a>
       <a href="#stack" class="mobile-link">Stack</a>
+      <a href="#process" class="mobile-link">Process</a>
+      <a href="#pricing" class="mobile-link">Pricing</a>
       <a href="#contact" class="mobile-link">Contact</a>
       <a href="https://wa.me/YOUR_PHONE_NUMBER" class="mobile-link whatsapp-link" target="_blank" rel="noopener noreferrer">
         <span>WhatsApp</span>
@@ -111,40 +115,68 @@
           <div class="actions">
             <a class="btn primary" href="#contact">Start a Project →</a>
             <a class="btn secondary" href="#work">View My Work</a>
-            <a class="hero-whatsapp" href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" rel="noopener noreferrer">
+            <a class="hero-whatsapp" href="https://wa.me/923350991548" target="_blank" rel="noopener noreferrer">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               <span>Chat on WhatsApp</span>
             </a>
           </div>
         </div>
-        <div class="hero-art reveal" aria-hidden="true">
-          <!-- Browser mockup behind identity card -->
-          <div class="browser-mockup">
-            <div class="browser-bar">
-              <span class="browser-dot"></span>
-              <span class="browser-dot"></span>
-              <span class="browser-dot"></span>
-              <span class="browser-url">codewithnisar.com</span>
-            </div>
-            <div class="browser-body">
-              <div class="browser-nav-mock"></div>
-              <div class="browser-hero-mock"></div>
-              <div class="browser-grid-mock">
-                <div class="browser-card-mock"></div>
-                <div class="browser-card-mock"></div>
+        <div class="hero-art reveal" id="hero-card-stack" role="region" aria-label="Interactive ID Cards Stack">
+          <!-- Card 1: Identity & Name -->
+          <div class="stack-card card-top" data-card="1" tabindex="0" role="button" aria-label="Card 1: Nisar Ali Identity - Click to shuffle">
+            <div class="card-inner">
+              <div class="art-top">
+                <span>CN / 2026</span>
+                <span>01 — 03</span>
+              </div>
+              <div class="art-name">NISAR<br>ALI</div>
+              <div class="art-bottom">
+                <p>WEB DEVELOPMENT<br>UI / UX DESIGN<br>CONTENT CREATION</p>
+                <span class="click-hint">Click stack ↻</span>
               </div>
             </div>
           </div>
-          <!-- Identity card stack -->
-          <div class="shape one"></div>
-          <div class="shape two"></div>
-          <div class="art-content">
-            <div class="art-top">
-              <span>CN / 2026</span>
-              <span>01—01</span>
+
+          <!-- Card 2: Tech Stack & Skills -->
+          <div class="stack-card card-mid" data-card="2" tabindex="0" role="button" aria-label="Card 2: Skills & Tech Stack - Click to shuffle">
+            <div class="card-inner">
+              <div class="art-top">
+                <span>SKILLS / STACK</span>
+                <span>02 — 03</span>
+              </div>
+              <div class="art-title">CORE<br>STACK</div>
+              <div class="art-tags-list">
+                <span class="art-tag">REACT</span>
+                <span class="art-tag">JAVASCRIPT</span>
+                <span class="art-tag">FIGMA</span>
+                <span class="art-tag">UI / UX</span>
+                <span class="art-tag">PERFORMANCE</span>
+                <span class="art-tag">CSS</span>
+              </div>
+              <div class="art-bottom">
+                <p>BUILDING SCALABLE DIGITAL PRODUCTS</p>
+                <span class="click-hint">Click stack ↻</span>
+              </div>
             </div>
-            <div class="art-name">NISAR<br>ALI</div>
-            <div class="art-bottom">WEB DEVELOPMENT<br>UI / UX DESIGN<br>CONTENT CREATION</div>
+          </div>
+
+          <!-- Card 3: Contact & Availability -->
+          <div class="stack-card card-bot" data-card="3" tabindex="0" role="button" aria-label="Card 3: Contact & Work Availability - Click to shuffle">
+            <div class="card-inner">
+              <div class="art-top">
+                <span>AVAILABILITY</span>
+                <span>03 — 03</span>
+              </div>
+              <div class="art-title">LET'S<br>BUILD.</div>
+              <div class="art-desc">
+                <p class="highlight-text">🟢 AVAILABLE FOR NEW PROJECTS</p>
+                <p class="sub-text">Turn your idea into a fast, modern website that converts.</p>
+              </div>
+              <div class="art-bottom">
+                <a href="#contact" class="card-cta-btn">Start Project →</a>
+                <span class="click-hint">Click stack ↻</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -167,131 +199,147 @@
     </div>
 
     <!-- ============================
-         ABOUT SECTION
-         ============================ -->
-    <section id="about">
-      <div class="container reveal">
-        <div class="section-num">01 / ABOUT</div>
-        <div class="title">More than code.</div>
-        <div class="intro-grid" style="margin-top:45px">
-          <div class="big-copy">I don't just write code — I build websites that help businesses grow, communicate clearly and leave a lasting impression.</div>
-          <div class="about-right">
-            <div class="about-text">
-              <p class="muted">I'm Nisar Ali, a web developer and UI/UX designer behind CodeWithNisar. I specialize in creating modern, responsive websites that combine thoughtful design with clean, efficient code.</p>
-              <p class="muted" style="margin-top:14px">Every project starts with understanding your goals — and ends with a product that looks professional, performs fast and delivers real value.</p>
-            </div>
-            <div class="strengths-grid">
-              <div class="strength">
-                <div class="strength-num">01</div>
-                <h3>Design-First Development</h3>
-                <p class="muted">Thoughtful interfaces with strong visual hierarchy and modern UX.</p>
-              </div>
-              <div class="strength">
-                <div class="strength-num">02</div>
-                <h3>Performance</h3>
-                <p class="muted">Fast, responsive websites optimized for real devices and real users.</p>
-              </div>
-              <div class="strength">
-                <div class="strength-num">03</div>
-                <h3>Business-Focused</h3>
-                <p class="muted">Every page has a clear purpose: inform, engage, or convert.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="stats-row">
-          <div class="stat"><strong>4+</strong><span>Years of experience</span></div>
-          <div class="stat"><strong>50+</strong><span>Projects built</span></div>
-          <div class="stat"><strong>100+</strong><span>Resources created</span></div>
-          <div class="stat"><strong>CWN</strong><span>YouTube creator</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================
-         SELECTED WORK / PROJECTS
+         SELECTED WORK / PROJECTS (MOVED ABOVE THE FOLD)
          ============================ -->
     <section id="work">
       <div class="container reveal">
-        <div class="section-num">02 / PROJECTS</div>
+        <div class="section-num">01 / PROJECTS</div>
         <div class="title">Things I've built.</div>
 
         <!-- Featured Project -->
         <div class="featured-project" role="button" tabindex="0" aria-label="View case study for Sufia Noorbakhshia" data-project="sufia">
           <div class="featured-img">
-            <div class="project-badge concept-badge">Concept Project</div>
+            <div class="project-badge real-badge">✦ FEATURED PLATFORM</div>
             <div class="ui emerald-ui">
-              <div class="ui-head"></div>
-              <div class="ui-block"></div>
-              <div class="ui-row">
-                <div class="ui-small"></div>
-                <div class="ui-small"></div>
+              <div class="mock-window-bar">
+                <div class="mock-dots"><span></span><span></span><span></span></div>
+                <div class="mock-url">sufia-noorbakhshia.org</div>
+                <span class="mock-status-pill">🟢 LIVE</span>
+              </div>
+              <div class="mock-app-body">
+                <div class="mock-app-header">
+                  <div class="mock-app-brand">🕌 Sufia Educational Portal</div>
+                  <div class="mock-app-nav"><span>Home</span><span>Quran</span><span>Daily Tools</span><span>Articles</span></div>
+                </div>
+                <div class="mock-hero-banner emerald-banner">
+                  <div>
+                    <small>FEATURED ISLAMIC PLATFORM</small>
+                    <h4>Purpose-Driven Digital Experience</h4>
+                  </div>
+                  <div class="mock-pill-tag">Daily Tracker 85%</div>
+                </div>
+                <div class="mock-app-grid">
+                  <div class="mock-widget-card">
+                    <div class="widget-icon">📖</div>
+                    <div>
+                      <strong>Quran Recitation & Tracker</strong>
+                      <small>Audio playback & bookmarking system</small>
+                    </div>
+                  </div>
+                  <div class="mock-widget-card">
+                    <div class="widget-icon">🕌</div>
+                    <div>
+                      <strong>Prayer Times & Qibla</strong>
+                      <small>Automatic location calculation</small>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="featured-info">
             <small>Islamic / Education</small>
             <h3>Sufia Noorbakhshia</h3>
-            <p class="featured-desc">Modern digital experience designed around Islamic content, learning and daily tools. A purpose-driven educational platform.</p>
+            <p class="featured-desc">Modern digital experience designed around Islamic content, learning and daily tools. A purpose-driven educational platform built with intuitive UI patterns.</p>
             <div class="tags"><span class="tag">React</span><span class="tag">Firebase</span><span class="tag">UI/UX</span></div>
             <div class="project-actions">
               <a class="btn-link" href="#" onclick="event.stopPropagation()">Case Study →</a>
+              <a class="btn-link secondary-link" href="#" onclick="event.stopPropagation()">Live Preview ↗</a>
             </div>
           </div>
         </div>
 
         <!-- More Projects Grid -->
-        <div class="projects-label">More Projects</div>
+        <div class="projects-label">More Featured Work</div>
         <div class="work-grid">
           <div class="work" role="button" tabindex="0" aria-label="View case study for English Master / Elingo" data-project="elingo">
             <div class="work-img">
-              <div class="project-badge concept-badge">Concept</div>
+              <div class="project-badge real-badge">✦ LIVE APP DEMO</div>
               <div class="ui blue-ui">
-                <div class="ui-head"></div>
-                <div class="ui-block"></div>
-                <div class="ui-row">
-                  <div class="ui-small"></div>
-                  <div class="ui-small"></div>
+                <div class="mock-window-bar">
+                  <div class="mock-dots"><span></span><span></span><span></span></div>
+                  <div class="mock-url">elingo-app.com/learn</div>
+                </div>
+                <div class="mock-app-body">
+                  <div class="mock-app-header">
+                    <div class="mock-app-brand">🌐 Elingo App</div>
+                    <div class="mock-streak-badge">🔥 14 Days</div>
+                  </div>
+                  <div class="mock-quiz-box">
+                    <small>SPEECH LESSON #04</small>
+                    <strong>"Choose the correct phrase"</strong>
+                    <div class="mock-opt correct">✓ "I have achieved my goals."</div>
+                  </div>
+                  <div class="mock-progress-wrap">
+                    <div class="mock-progress-fill"></div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="work-info">
               <small>Learning / AI</small>
               <h3>English Master / Elingo</h3>
-              <p>A modern language-learning application concept.</p>
+              <p>A modern language-learning application concept with interactive lessons.</p>
               <div class="tags"><span class="tag">JavaScript</span><span class="tag">AI</span><span class="tag">Firebase</span></div>
             </div>
           </div>
 
           <div class="work" role="button" tabindex="0" aria-label="View case study for StudyPal" data-project="studypal">
             <div class="work-img">
-              <div class="project-badge concept-badge">Concept</div>
+              <div class="project-badge real-badge">✦ AI WEB APP</div>
               <div class="ui orange-ui">
-                <div class="ui-head"></div>
-                <div class="ui-block"></div>
-                <div class="ui-row">
-                  <div class="ui-small"></div>
-                  <div class="ui-small"></div>
+                <div class="mock-window-bar">
+                  <div class="mock-dots"><span></span><span></span><span></span></div>
+                  <div class="mock-url">studypal.ai/dashboard</div>
+                </div>
+                <div class="mock-app-body">
+                  <div class="mock-app-header">
+                    <div class="mock-app-brand">✨ StudyPal AI</div>
+                    <div class="mock-pill-tag">AI Active</div>
+                  </div>
+                  <div class="mock-chat-bubble user">💬 Summarize Chapter 4: Algorithms</div>
+                  <div class="mock-chat-bubble ai">🤖 <strong>Key Takeaway:</strong> Binary search reduces lookup time to O(log n)...</div>
                 </div>
               </div>
             </div>
             <div class="work-info">
               <small>AI / Education</small>
               <h3>StudyPal</h3>
-              <p>AI-powered study companion concept.</p>
+              <p>AI-powered study companion & productivity assistant concept.</p>
               <div class="tags"><span class="tag">AI</span><span class="tag">JavaScript</span></div>
             </div>
           </div>
 
           <div class="work" role="button" tabindex="0" aria-label="View case study for StackAura Web" data-project="stackaura">
             <div class="work-img">
-              <div class="project-badge concept-badge">Concept</div>
+              <div class="project-badge real-badge">✦ DEV PLATFORM</div>
               <div class="ui purple-ui">
-                <div class="ui-head"></div>
-                <div class="ui-block"></div>
-                <div class="ui-row">
-                  <div class="ui-small"></div>
-                  <div class="ui-small"></div>
+                <div class="mock-window-bar">
+                  <div class="mock-dots"><span></span><span></span><span></span></div>
+                  <div class="mock-url">stackaura.dev/console</div>
+                </div>
+                <div class="mock-app-body">
+                  <div class="mock-app-header">
+                    <div class="mock-app-brand">⚡ StackAura Console</div>
+                    <span class="mock-status-pill">🟢 99.9%</span>
+                  </div>
+                  <div class="mock-editor-box">
+                    <span class="c-purple">const</span> <span class="c-yellow">deploy</span> = () =&gt; &lt;<span class="c-blue">App</span> /&gt;;
+                  </div>
+                  <div class="mock-metrics-row">
+                    <span>1.2M API Calls</span>
+                    <span>2.4ms Latency</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -305,20 +353,32 @@
 
           <div class="work" role="button" tabindex="0" aria-label="View case study for Modern E-commerce" data-project="ecommerce">
             <div class="work-img">
-              <div class="project-badge concept-badge">Concept</div>
+              <div class="project-badge real-badge">✦ E-COMMERCE STORE</div>
               <div class="ui amber-ui">
-                <div class="ui-head"></div>
-                <div class="ui-block"></div>
-                <div class="ui-row">
-                  <div class="ui-small"></div>
-                  <div class="ui-small"></div>
+                <div class="mock-window-bar">
+                  <div class="mock-dots"><span></span><span></span><span></span></div>
+                  <div class="mock-url">store.codewithnisar.com</div>
+                </div>
+                <div class="mock-app-body">
+                  <div class="mock-app-header">
+                    <div class="mock-app-brand">🛍️ Aura Store</div>
+                    <div class="mock-cart-badge">🛒 (2)</div>
+                  </div>
+                  <div class="mock-prod-box">
+                    <small>BESTSELLER</small>
+                    <strong>Minimalist Mechanical Keyboard</strong>
+                    <div class="mock-prod-price">
+                      <span>14,999 PKR</span>
+                      <div class="mock-buy-btn">Add +</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="work-info">
               <small>Commerce / Product</small>
               <h3>Modern E-commerce</h3>
-              <p>Clean shopping experience with thoughtful UI.</p>
+              <p>Clean shopping experience with thoughtful UI and fast checkout.</p>
               <div class="tags"><span class="tag">React</span><span class="tag">UI/UX</span></div>
             </div>
           </div>
@@ -331,7 +391,7 @@
          ============================ -->
     <section id="services">
       <div class="container reveal">
-        <div class="section-num">03 / SERVICES</div>
+        <div class="section-num">02 / SERVICES</div>
         <div class="title">What I can build for you.</div>
         <div class="services-grid">
           <div class="service-card">
@@ -389,6 +449,48 @@
             <div class="service-tech">Figma · Design Systems · Prototyping</div>
             <a class="btn-link" href="#contact">Start a Project →</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         ABOUT SECTION
+         ============================ -->
+    <section id="about">
+      <div class="container reveal">
+        <div class="section-num">03 / ABOUT</div>
+        <div class="title">More than code.</div>
+        <div class="intro-grid" style="margin-top:35px">
+          <div class="big-copy">I don't just write code — I build websites that help businesses grow, communicate clearly and leave a lasting impression.</div>
+          <div class="about-right">
+            <div class="about-text">
+              <p class="muted">I'm Nisar Ali, a web developer and UI/UX designer behind CodeWithNisar. I specialize in creating modern, responsive websites that combine thoughtful design with clean, efficient code.</p>
+              <p class="muted" style="margin-top:14px">Every project starts with understanding your goals — and ends with a product that looks professional, performs fast and delivers real value.</p>
+            </div>
+            <div class="strengths-grid">
+              <div class="strength">
+                <div class="strength-num">01</div>
+                <h3>Design-First Development</h3>
+                <p class="muted">Thoughtful interfaces with strong visual hierarchy and modern UX.</p>
+              </div>
+              <div class="strength">
+                <div class="strength-num">02</div>
+                <h3>Performance</h3>
+                <p class="muted">Fast, responsive websites optimized for real devices and real users.</p>
+              </div>
+              <div class="strength">
+                <div class="strength-num">03</div>
+                <h3>Business-Focused</h3>
+                <p class="muted">Every page has a clear purpose: inform, engage, or convert.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><strong>4+</strong><span>Years of experience</span></div>
+          <div class="stat"><strong>50+</strong><span>Projects built</span></div>
+          <div class="stat"><strong>100+</strong><span>Resources created</span></div>
+          <div class="stat"><strong>CWN</strong><span>CodeWithNisar YouTube</span></div>
         </div>
       </div>
     </section>
@@ -454,72 +556,126 @@
     </section>
 
     <!-- ============================
-         PROCESS
+         PROCESS (REDESIGNED TIMELINE STEPPER)
          ============================ -->
     <section id="process">
       <div class="container reveal">
         <div class="section-num">05 / PROCESS</div>
         <div class="title">How I work.</div>
-        <div class="process">
-          <div class="step">
-            <b>01</b>
-            <h3>Discover</h3>
-            <p class="step-desc">Understand the business, goals and requirements.</p>
-          </div>
-          <div class="step">
-            <b>02</b>
-            <h3>Design</h3>
-            <p class="step-desc">Create the visual direction and user experience.</p>
-          </div>
-          <div class="step">
-            <b>03</b>
-            <h3>Develop</h3>
-            <p class="step-desc">Build a responsive, fast and polished website.</p>
-          </div>
-          <div class="step">
-            <b>04</b>
-            <h3>Launch</h3>
-            <p class="step-desc">Deploy, test and hand over the final product.</p>
+        <p class="section-lead">A streamlined, 4-step workflow to turn your vision into a live, high-performing website.</p>
+        
+        <div class="process-stepper-wrapper">
+          <div class="process-track" aria-hidden="true"></div>
+          <div class="process-steps">
+            <div class="process-card">
+              <div class="step-head">
+                <div class="step-icon-badge">
+                  <span class="icon">🔍</span>
+                  <span class="num">01</span>
+                </div>
+              </div>
+              <h3>Discover</h3>
+              <p class="step-desc">Understand business goals, target audience, brand identity, and key functional requirements.</p>
+              <div class="step-deliverables">
+                <span>Goals Audit</span>
+                <span>Scope Plan</span>
+              </div>
+            </div>
+
+            <div class="process-card">
+              <div class="step-head">
+                <div class="step-icon-badge">
+                  <span class="icon">🎨</span>
+                  <span class="num">02</span>
+                </div>
+              </div>
+              <h3>Design</h3>
+              <p class="step-desc">Craft modern visual direction, interactive wireframes, and pixel-perfect UI/UX layouts.</p>
+              <div class="step-deliverables">
+                <span>UI Mockups</span>
+                <span>Design System</span>
+              </div>
+            </div>
+
+            <div class="process-card">
+              <div class="step-head">
+                <div class="step-icon-badge">
+                  <span class="icon">⚡</span>
+                  <span class="num">03</span>
+                </div>
+              </div>
+              <h3>Develop</h3>
+              <p class="step-desc">Write clean, performant frontend code with full mobile responsiveness and smooth animations.</p>
+              <div class="step-deliverables">
+                <span>Clean Code</span>
+                <span>Responsive UX</span>
+              </div>
+            </div>
+
+            <div class="process-card">
+              <div class="step-head">
+                <div class="step-icon-badge">
+                  <span class="icon">🚀</span>
+                  <span class="num">04</span>
+                </div>
+              </div>
+              <h3>Launch</h3>
+              <p class="step-desc">Speed optimization, SEO checks, domain deployment, and complete project handover.</p>
+              <div class="step-deliverables">
+                <span>SEO & Speed</span>
+                <span>Live Deploy</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================
-         PRICING
+         PRICING (REDESIGNED 2-COLUMN HEADER & LAYOUT)
          ============================ -->
     <section id="pricing">
       <div class="container reveal">
-        <div class="section-num">06 / PRICING</div>
-        <div class="title">Investment.</div>
-        <p class="pricing-subtitle muted">Transparent starting points for common project types.</p>
+        <div class="pricing-header">
+          <div>
+            <div class="section-num">06 / PRICING</div>
+            <div class="title">Investment.</div>
+          </div>
+          <div class="pricing-header-right">
+            <p class="pricing-subtitle">Transparent starting points for common project types. Clear deliverables with no hidden costs.</p>
+            <div class="pricing-meta-tag">✦ Clean Code · Fast Loading · 100% Responsive</div>
+          </div>
+        </div>
+
         <div class="pricing-grid">
           <div class="pricing-card">
             <div class="pricing-tier">Landing Page</div>
             <div class="pricing-amount">15,000 <span>PKR</span></div>
             <div class="pricing-starting">Starting from</div>
             <ul class="pricing-features">
-              <li>Single page design</li>
-              <li>Responsive layout</li>
-              <li>Contact form</li>
+              <li>Single page design & build</li>
+              <li>100% responsive layout</li>
+              <li>Contact form integration</li>
               <li>Performance optimized</li>
+              <li>Basic SEO setup</li>
             </ul>
             <a class="btn-link" href="#contact">Get Started →</a>
           </div>
 
           <div class="pricing-card featured-pricing">
-            <div class="pricing-popular">Most Popular</div>
+            <div class="pricing-popular">✦ Most Popular</div>
             <div class="pricing-tier">Business Website</div>
             <div class="pricing-amount">25,000 <span>PKR</span></div>
             <div class="pricing-starting">Starting from</div>
             <ul class="pricing-features">
-              <li>Multi-page website</li>
-              <li>Custom design</li>
-              <li>Responsive & fast</li>
+              <li>Multi-page website (Up to 5 pages)</li>
+              <li>Custom UI/UX design</li>
+              <li>Mobile-first & fast loading</li>
               <li>SEO basics included</li>
-              <li>Contact integration</li>
+              <li>Contact & WhatsApp integration</li>
+              <li>1 month post-launch support</li>
             </ul>
-            <a class="btn-link" href="#contact">Get Started →</a>
+            <a class="btn primary" style="justify-content:center;margin-top:auto" href="#contact">Get Started →</a>
           </div>
 
           <div class="pricing-card">
@@ -527,53 +683,92 @@
             <div class="pricing-amount">40,000 <span>PKR</span></div>
             <div class="pricing-starting">Starting from</div>
             <ul class="pricing-features">
-              <li>Advanced design & UX</li>
-              <li>Custom animations</li>
-              <li>CMS or dashboard</li>
-              <li>Performance & SEO</li>
-              <li>Ongoing support</li>
+              <li>Advanced design & custom UX</li>
+              <li>Micro-animations & interactions</li>
+              <li>CMS or admin dashboard</li>
+              <li>Full Performance & SEO audit</li>
+              <li>Priority ongoing support</li>
             </ul>
             <a class="btn-link" href="#contact">Get Started →</a>
           </div>
         </div>
-        <p class="pricing-note muted">Final pricing depends on project scope and requirements. <a href="#contact">Let's discuss your project →</a></p>
+        <p class="pricing-note muted">Need something tailored? Final pricing depends on project scope and custom requirements. <a href="#contact">Let's discuss your project →</a></p>
       </div>
     </section>
 
     <!-- ============================
-         TRUST / CREATOR BANNER
+         TRUST / CREATOR BANNER (BALANCED 2-COLUMN LAYOUT)
          ============================ -->
     <section id="trust">
       <div class="container reveal">
         <div class="trust-banner">
           <div class="trust-content">
             <div class="creator-badge">
-              <span class="pulse-dot"></span> CODEWITHNISAR
+              <span class="pulse-dot"></span> CODEWITHNISAR YOUTUBE
             </div>
-            <h2>Currently building thoughtful digital experiences for ambitious people, businesses and products.</h2>
-            <p class="muted">Developer, designer and creator sharing practical coding and design content through CodeWithNisar on YouTube.</p>
-            <a class="btn secondary" href="https://youtube.com/" target="_blank" rel="noopener noreferrer">Visit YouTube Channel ↗</a>
+            <h2>Building digital experiences & sharing coding content.</h2>
+            <p class="muted">Developer, designer and creator behind CodeWithNisar. Creating practical tutorials on web development, UI/UX design, React, and building real-world applications.</p>
+            
+            <div class="trust-highlights">
+              <div class="trust-pill">⚡ 50+ Practical Tutorials</div>
+              <div class="trust-pill">🎨 UI/UX & Web Design</div>
+              <div class="trust-pill">💻 Free Source Code</div>
+            </div>
+
+            <a class="btn primary trust-btn" href="https://youtube.com/" target="_blank" rel="noopener noreferrer">Visit YouTube Channel ↗</a>
+          </div>
+
+          <div class="trust-visual" aria-hidden="true">
+            <div class="trust-card-mockup">
+              <div class="trust-card-header">
+                <div class="yt-profile">
+                  <div class="yt-avatar">CN</div>
+                  <div>
+                    <div class="yt-name">CodeWithNisar</div>
+                    <div class="yt-sub">Web Development & UI/UX</div>
+                  </div>
+                </div>
+                <span class="yt-badge">FEATURED</span>
+              </div>
+              <div class="trust-card-body">
+                <div class="code-snippet-box">
+                  <div class="code-line"><span class="c-purple">const</span> <span class="c-yellow">buildWebsite</span> = () =&gt; {</div>
+                  <div class="code-line indent"><span class="c-blue">design</span>: <span class="c-green">'Thoughtful & Modern'</span>,</div>
+                  <div class="code-line indent"><span class="c-blue">speed</span>: <span class="c-green">'Lightning Fast'</span>,</div>
+                  <div class="code-line indent"><span class="c-blue">results</span>: <span class="c-green">'Real Business Value'</span></div>
+                  <div class="code-line">};</div>
+                </div>
+                <div class="yt-video-card">
+                  <div class="play-btn">▶</div>
+                  <div class="video-meta">
+                    <small>LATEST TUTORIAL</small>
+                    <strong>Build Modern Portfolio Website with HTML & CSS</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================
-         CONTACT / CONVERSION
+         CONTACT / CONVERSION (FORM WRAPPED IN CARD)
          ============================ -->
     <section id="contact">
       <div class="container reveal">
         <div class="section-num">07 / CONTACT</div>
         <div class="contact-box">
-          <div>
+          <div class="contact-left">
             <h2>Have a project<br>in <span>mind?</span><br>Let's build it.</h2>
-            <p class="muted" style="max-width:430px;margin-top:25px">Whether it's a business website, landing page, redesign or UI/UX project — let's turn your idea into something professional and effective.</p>
+            <p class="muted" style="max-width:430px;margin-top:20px">Whether it's a business website, landing page, redesign or UI/UX project — let's turn your idea into something professional and effective.</p>
+            
             <div class="contact-methods">
-              <a href="https://wa.me/YOUR_PHONE_NUMBER" class="contact-method whatsapp" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/923350991548" class="contact-method whatsapp" target="_blank" rel="noopener noreferrer">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 <span>WhatsApp</span>
               </a>
-              <a href="mailto:hello@example.com" class="contact-method">
+              <a href="mailto:nissarralee11255@gmail.com" class="contact-method">
                 <span class="contact-icon">✉</span>
                 <span>Email</span>
               </a>
@@ -582,79 +777,134 @@
                 <span>LinkedIn</span>
               </a>
             </div>
-            <div class="socials" style="margin-top:25px">
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-              <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+
+            <div class="contact-info-tags">
+              <div class="info-tag">⚡ Quick Response</div>
+              <div class="info-tag">🌍 Remote Work Worldwide</div>
             </div>
           </div>
-          <form class="form" id="form" action="#" method="POST" novalidate>
-            <div class="field"><label for="name">Name</label><input id="name" name="name" required placeholder="Your name" autocomplete="name"></div>
-            <div class="field"><label for="email">Email</label><input id="email" name="email" required type="email" placeholder="you@example.com" autocomplete="email"></div>
-            <div class="field">
-              <label for="project-type">Project type</label>
-              <select id="project-type" name="projectType">
-                <option value="">Select project type</option>
-                <option>Business Website</option>
-                <option>Landing Page</option>
-                <option>Website Redesign</option>
-                <option>UI/UX Design</option>
-                <option>Other</option>
-              </select>
+
+          <!-- Wrapped Form Card -->
+          <div class="contact-form-card">
+            <div class="form-card-head">
+              <h3>Send a Message ✦</h3>
+              <p>Fill out the form below & I will respond within 24 hours.</p>
             </div>
-            <div class="field">
-              <label for="budget">Budget range</label>
-              <select id="budget" name="budget">
-                <option>Let's discuss</option>
-                <option>Under 15,000 PKR</option>
-                <option>15,000–30,000 PKR</option>
-                <option>30,000+ PKR</option>
-              </select>
-            </div>
-            <div class="field"><label for="message">Message</label><textarea id="message" name="message" required placeholder="Tell me about your project..."></textarea></div>
-            <button class="btn primary" type="submit" id="submit-btn">
-              <span class="btn-text">Send message →</span>
-              <span class="btn-loading" style="display:none">Sending...</span>
-            </button>
-            <div class="form-feedback" id="form-feedback" role="alert" aria-live="polite"></div>
-          </form>
+            <form class="form" id="form" action="https://formsubmit.co/nissarralee11255@gmail.com" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="✦ New Portfolio Inquiry!">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <div class="form-row">
+                <div class="field">
+                  <label for="name">Name <span class="req">*</span></label>
+                  <input id="name" name="name" required placeholder="Your name" autocomplete="name">
+                </div>
+                <div class="field">
+                  <label for="email">Email <span class="req">*</span></label>
+                  <input id="email" name="email" required type="email" placeholder="you@example.com" autocomplete="email">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="project-type">Project type</label>
+                  <select id="project-type" name="projectType">
+                    <option value="">Select project type</option>
+                    <option>Business Website</option>
+                    <option>Landing Page</option>
+                    <option>Website Redesign</option>
+                    <option>UI/UX Design</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="budget">Budget range</label>
+                  <select id="budget" name="budget">
+                    <option>Let's discuss</option>
+                    <option>Under 15,000 PKR</option>
+                    <option>15,000–30,000 PKR</option>
+                    <option>30,000+ PKR</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="message">Message <span class="req">*</span></label>
+                <textarea id="message" name="message" required placeholder="Tell me about your project goals and timeline..."></textarea>
+              </div>
+
+              <button class="btn primary full-btn" type="submit" id="submit-btn">
+                <span class="btn-text">Send Message →</span>
+                <span class="btn-loading" style="display:none">Sending...</span>
+              </button>
+              <div class="form-feedback" id="form-feedback" role="alert" aria-live="polite"></div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer (MULTI-COLUMN & 2-ROW RESPONSIVE LAYOUT) -->
   <footer>
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="#home" class="logo">NISAR<i>.</i></a>
-        <p class="muted">Web Developer & UI/UX Designer</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo">NISAR<i>.</i></a>
+          <p class="muted">Web Developer & UI/UX Designer crafting modern, fast & responsive websites for business growth.</p>
+          <div class="footer-availability">
+            <span class="pulse-dot"></span> Available for new project inquiries
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <div class="footer-col-title">Navigation</div>
+          <nav class="footer-links" aria-label="Footer Quick Links">
+            <a href="#work">Work</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#stack">Stack</a>
+            <a href="#process">Process</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="#services">Business Websites</a>
+            <a href="#services">Landing Pages</a>
+            <a href="#services">Website Redesign</a>
+            <a href="#services">UI/UX Design</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Socials</div>
+          <div class="footer-links">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+            <a href="https://wa.me/923350991548" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+            <a href="mailto:nissarralee11255@gmail.com">Email ↗</a>
+          </div>
+        </div>
       </div>
-      <nav class="footer-nav" aria-label="Footer Navigation">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
-        <a href="#stack">Stack</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="footer-social">
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a href="mailto:hello@example.com">Email</a>
-      </div>
+
       <div class="footer-bottom">
-        <span>© 2026 Nisar Ali. All rights reserved.</span>
+        <span>© 2026 Nisar Ali (CodeWithNisar). All rights reserved.</span>
         <div class="footer-legal">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-service.html">Terms of Service</a>
+          <a href="#home" class="top-link">Back to Top ↑</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- WhatsApp Floating Button (Mobile) -->
-  <a href="https://wa.me/YOUR_PHONE_NUMBER" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp">
+  <a href="https://wa.me/923350991548" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 

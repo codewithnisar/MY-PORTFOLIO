@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // Contact Form Submission with States
+  // Contact Form Submission with WhatsApp & Email Integration
   // ==========================================
   const contactForm = document.getElementById('form');
   const toastNotification = document.getElementById('toast');
@@ -93,13 +93,20 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (event) => {
       event.preventDefault();
 
-      // Validate
+      // Validate Form
       if (!contactForm.checkValidity()) {
         contactForm.reportValidity();
         return;
       }
 
-      // Loading state
+      // Extract Form Field Values
+      const name = document.getElementById('name')?.value.trim() || '';
+      const email = document.getElementById('email')?.value.trim() || '';
+      const projectType = document.getElementById('project-type')?.value || '';
+      const budget = document.getElementById('budget')?.value || '';
+      const message = document.getElementById('message')?.value.trim() || '';
+
+      // UI Loading state
       if (submitBtn) {
         const btnText = submitBtn.querySelector('.btn-text');
         const btnLoading = submitBtn.querySelector('.btn-loading');
@@ -109,25 +116,54 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.style.opacity = '0.7';
       }
 
-      // Simulate submission (replace with real form handler)
+      // Format WhatsApp Pre-filled Chat Message
+      const waText = 
+        `*New Inquiry from Portfolio Website*%0A%0A` +
+        `*Name:* ${encodeURIComponent(name)}%0A` +
+        `*Email:* ${encodeURIComponent(email)}%0A` +
+        `*Project Type:* ${encodeURIComponent(projectType || 'General Inquiry')}%0A` +
+        `*Budget:* ${encodeURIComponent(budget || 'To discuss')}%0A%0A` +
+        `*Message:*%0A${encodeURIComponent(message)}`;
+
+      const waUrl = `https://wa.me/923350991548?text=${waText}`;
+
+      // Dispatch Email directly to nissarralee11255@gmail.com via FormSubmit AJAX API
+      fetch('https://formsubmit.co/ajax/nissarralee11255@gmail.com', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json' 
+        },
+        body: JSON.stringify({
+          _subject: `✦ New Portfolio Inquiry from ${name}`,
+          Name: name,
+          Email: email,
+          ProjectType: projectType || 'General Inquiry',
+          Budget: budget || 'To discuss',
+          Message: message
+        })
+      }).catch((err) => console.log('Email dispatch fallback:', err));
+
       setTimeout(() => {
-        // Success state
+        // Show Success Feedback & Toast
         if (formFeedback) {
-          formFeedback.textContent = '✓ Thank you! Your message has been sent successfully.';
+          formFeedback.textContent = '✓ Message sent to Email & opening WhatsApp chat...';
           formFeedback.className = 'form-feedback success';
         }
 
         if (toastNotification) {
+          toastNotification.textContent = '✓ Sent to Email! Opening WhatsApp chat... ✦';
           toastNotification.classList.add('show');
           setTimeout(() => {
             toastNotification.classList.remove('show');
-          }, 3500);
+          }, 4000);
         }
 
-        // Reset form
-        contactForm.reset();
+        // Open WhatsApp Redirect in New Tab
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
 
-        // Reset button
+        // Reset form & restore button state
+        contactForm.reset();
         if (submitBtn) {
           const btnText = submitBtn.querySelector('.btn-text');
           const btnLoading = submitBtn.querySelector('.btn-loading');
@@ -137,14 +173,14 @@ document.addEventListener('DOMContentLoaded', () => {
           submitBtn.style.opacity = '1';
         }
 
-        // Clear feedback after delay
+        // Clear feedback message after 6 seconds
         setTimeout(() => {
           if (formFeedback) {
             formFeedback.textContent = '';
             formFeedback.className = 'form-feedback';
           }
-        }, 5000);
-      }, 1200);
+        }, 6000);
+      }, 900);
     });
   }
 
@@ -170,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectData = {
     sufia: {
       title: 'Sufia Noorbakhshia',
-      type: 'Concept Project',
+      type: 'Featured Production Platform',
       description: 'A modern digital experience designed around Islamic content, learning and daily tools. This purpose-driven educational platform combines Quran tracking, quizzes, community content and personalized progress into a thoughtful user experience.',
       challenge: 'Creating an engaging digital platform that respects Islamic educational traditions while providing modern UX patterns.',
       approach: 'Design-first approach with a focus on accessibility, content hierarchy and daily engagement features.',
@@ -178,35 +214,35 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     elingo: {
       title: 'English Master / Elingo',
-      type: 'Concept Project',
+      type: 'Live Web Application',
       description: 'An English learning application focused on speaking, listening, reading, writing, grammar and vocabulary with modern learning interactions.',
       challenge: 'Making language learning engaging through interactive exercises and progress tracking.',
       approach: 'Gamified learning experience with clear progress indicators and daily practice goals.',
       tech: 'JavaScript · AI · Firebase'
     },
     studypal: {
-      title: 'StudyPal',
-      type: 'Concept Project',
-      description: 'An AI learning assistant concept for study planning, questions, notes and personalized learning workflows.',
+      title: 'StudyPal AI',
+      type: 'AI SaaS Web Application',
+      description: 'An AI learning assistant platform for study planning, smart Q&A summaries, notes and personalized learning workflows.',
       challenge: 'Integrating AI assistance into a study workflow without overwhelming the student.',
       approach: 'Minimal, focused interface that surfaces AI help contextually rather than constantly.',
-      tech: 'AI · JavaScript'
+      tech: 'AI · JavaScript · Web APIs'
     },
     stackaura: {
       title: 'StackAura Web',
-      type: 'Concept Project',
-      description: 'A modern developer tools and digital platform concept designed for scalable web applications.',
+      type: 'Developer Console & Platform',
+      description: 'A modern developer tools and digital platform console designed for scalable web applications.',
       challenge: 'Creating a clean, professional platform for developer-focused tools and resources.',
       approach: 'Performance-first architecture with modern component patterns and clean UI.',
       tech: 'React · JavaScript · CSS'
     },
     ecommerce: {
-      title: 'Modern E-commerce',
-      type: 'Concept Project',
+      title: 'Modern E-commerce Platform',
+      type: 'Full-Stack Commerce Store',
       description: 'A clean online shopping experience focused on product discovery, responsive layouts and conversion-friendly interactions.',
       challenge: 'Building a fast, intuitive shopping experience that works beautifully on all devices.',
       approach: 'Mobile-first design with focus on product imagery, clear CTAs and minimal friction checkout flow.',
-      tech: 'React · UI/UX'
+      tech: 'React · UI/UX · State Management'
     }
   };
 
@@ -262,5 +298,63 @@ document.addEventListener('DOMContentLoaded', () => {
       modalEl.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
+  }
+
+  // ==========================================
+  // Hero Stacked ID Cards Interactive Rotation
+  // ==========================================
+  const cardStackContainer = document.getElementById('hero-card-stack');
+  if (cardStackContainer) {
+    let isAnimating = false;
+
+    function rotateHeroCards() {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      const topCard = cardStackContainer.querySelector('.stack-card.card-top');
+      const midCard = cardStackContainer.querySelector('.stack-card.card-mid');
+      const botCard = cardStackContainer.querySelector('.stack-card.card-bot');
+
+      if (!topCard || !midCard || !botCard) {
+        isAnimating = false;
+        return;
+      }
+
+      // Add shuffle keyframe class to top card
+      topCard.classList.add('shuffling');
+
+      // Halfway through animation (300ms), rotate positions
+      setTimeout(() => {
+        topCard.classList.remove('card-top', 'shuffling');
+        topCard.classList.add('card-bot');
+
+        midCard.classList.remove('card-mid');
+        midCard.classList.add('card-top');
+
+        botCard.classList.remove('card-bot');
+        botCard.classList.add('card-mid');
+
+        setTimeout(() => {
+          isAnimating = false;
+        }, 150);
+      }, 280);
+    }
+
+    cardStackContainer.addEventListener('click', (e) => {
+      // If user clicks a link (like .card-cta-btn), allow default anchor navigation
+      if (e.target.closest('a')) return;
+      rotateHeroCards();
+    });
+
+    const cards = cardStackContainer.querySelectorAll('.stack-card');
+    cards.forEach((card) => {
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          if (e.target.closest('a')) return;
+          e.preventDefault();
+          rotateHeroCards();
+        }
+      });
+    });
   }
 });
